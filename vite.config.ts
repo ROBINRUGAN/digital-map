@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
-  base:"./", //设置项目的根目录
+  base:"/digital-map/", //设置项目的根目录
   build: {
     outDir: "docs"
   },
