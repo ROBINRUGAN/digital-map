@@ -2,15 +2,17 @@
   <!-- 缩放按钮 -->
   <button class="zoomIn" @click="zoomIn">➕</button>
   <button class="zoomOut" @click="zoomOut">➖</button>
-  <!-- TODO -->
+  <!-- 帮助 -->
   <button class="aboutUs" @click="zoomOut">❓</button>
+
+  <InfoDetail :id="exactId" ref="OpenHook" />
 
   <!-- 底图 -->
   <div class="map-container" ref="mapContainer">
     <img src="../assets/background.png" @load="onImageLoaded" class="map-image" ref="mapImage" />
 
     <!-- 安泰河 -->
-    <An_tai_he :zoom-level="zoomLevel" :top="10" :left="24"></An_tai_he>
+    <An_tai_he :zoom-level="zoomLevel" :top="10" :left="24" @click="showDetail(22)"></An_tai_he>
 
     <!-- 三坊七巷名人家风家训馆 -->
     <Ming_ren_jia_feng_jia_xun
@@ -23,7 +25,12 @@
     <Guang_lu_yin_he :zoom-level="zoomLevel" :top="23" :left="35"></Guang_lu_yin_he>
 
     <!-- 林则徐纪念馆 -->
-    <Lin_ze_xu_ji_nian_guan :zoom-level="zoomLevel" :top="19" :left="5"></Lin_ze_xu_ji_nian_guan>
+    <Lin_ze_xu_ji_nian_guan
+      :zoom-level="zoomLevel"
+      :top="19"
+      :left="5"
+      @click="showDetail(1)"
+    ></Lin_ze_xu_ji_nian_guan>
 
     <!-- 瑞来春堂 -->
     <Rui_lai_chun_tang :zoom-level="zoomLevel" :top="27" :left="27"></Rui_lai_chun_tang>
@@ -226,11 +233,13 @@ import She_zu_guan from '@/components/location/she_zu_guan.vue'
 import Tian_hou_gong from '@/components/location/tian_hou_gong.vue'
 import Yan_fu_gu_ju from '@/components/location/yan_fu_gu_ju.vue'
 import Sui_an_hui_guan from '@/components/location/sui_an_hui_guan.vue'
+import InfoDetail from '@/components/InfoDetail.vue'
 
 const mapImage = ref<HTMLImageElement | null>(null)
 const zoomLevel = ref<number>(1)
+const exactId = ref<number>(0)
 const zoomStep = 0.1
-
+const OpenHook = ref<typeof InfoDetail | null>(null)
 let loadingInstance: { close: () => void } | null = null
 
 onMounted(() => {
@@ -240,6 +249,10 @@ onMounted(() => {
     background: 'rgba(255, 255, 255, 0.7)'
   })
 })
+function showDetail(id: number) {
+  exactId.value = id
+  OpenHook.value!.loadScenicSpotInfo(id)
+}
 
 function onImageLoaded() {
   if (loadingInstance) {
