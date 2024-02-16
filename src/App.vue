@@ -6,10 +6,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <RouterView />
 </template>
 
-<style>
+<style lang="scss">
 *{
   margin: 0;
   padding: 0;
+  // @import './assets/styles/global.scss';
 }
 </style>
 
