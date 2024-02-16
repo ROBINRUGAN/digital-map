@@ -10,6 +10,9 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
+  build: {
+    outDir: "docs"
+  },
   server: {
     host:'0.0.0.0'
   },
