@@ -34,7 +34,7 @@ interface SpotInfo {
 
 const loadScenicSpotInfo = async (id: number) => {
     same.value = false
-    const response = await fetch('/data/spots.json') // 确保路径正确
+    const response = await fetch('./data/spots.json') // 确保路径正确
     const { spots } = await response.json()
     const spot = spots.find((s: SpotInfo) => s.id === id)
     if (spot) {
