@@ -32,8 +32,8 @@ const pointStyle = computed(() => {
 
 <style scoped>
 .map-point {
-  width: 85px;
-  height: 50px;
+  width: 83px;
+  height: 52px;
   background-size: 100%;
   cursor: pointer;
   background-color: transparent;

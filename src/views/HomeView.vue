@@ -7,7 +7,7 @@
 
   <!-- 底图 -->
   <div class="map-container" ref="mapContainer">
-    <img src="../assets/background.png" class="map-image" ref="mapImage" />
+    <img src="../assets/background.png" @load="onImageLoaded" class="map-image" ref="mapImage" />
 
     <!-- 安泰河 -->
     <An_tai_he :zoom-level="zoomLevel" :top="10" :left="24"></An_tai_he>
@@ -23,13 +23,13 @@
     <Guang_lu_yin_he :zoom-level="zoomLevel" :top="23" :left="35"></Guang_lu_yin_he>
 
     <!-- 林则徐纪念馆 -->
-    <lin_ze_xu_ji_nian_guan :zoom-level="zoomLevel" :top="19" :left="5"></lin_ze_xu_ji_nian_guan>
+    <Lin_ze_xu_ji_nian_guan :zoom-level="zoomLevel" :top="19" :left="5"></Lin_ze_xu_ji_nian_guan>
 
     <!-- 瑞来春堂 -->
     <Rui_lai_chun_tang :zoom-level="zoomLevel" :top="27" :left="27"></Rui_lai_chun_tang>
 
     <!-- 便民资讯点 -->
-    <bian_min_zi_xun_dian :zoom-level="zoomLevel" :top="28" :left="31"></bian_min_zi_xun_dian>
+    <Bian_min_zi_xun_dian :zoom-level="zoomLevel" :top="28" :left="31"></Bian_min_zi_xun_dian>
 
     <!-- 至道漆器 -->
     <Zhi_dao_qi_qi :zoom-level="zoomLevel" :top="31" :left="36"></Zhi_dao_qi_qi>
@@ -51,13 +51,13 @@
     <Min_jian_yi_shu_guan :zoom-level="zoomLevel" :top="37" :left="24"></Min_jian_yi_shu_guan>
 
     <!-- 严复翰墨馆 -->
-    <yan_fu_han_mo_guan :zoom-level="zoomLevel" :top="47" :left="24"></yan_fu_han_mo_guan>
+    <Yan_fu_han_mo_guan :zoom-level="zoomLevel" :top="47" :left="24"></Yan_fu_han_mo_guan>
 
     <!-- 三山堂旧址 -->
     <San_shan_tang :zoom-level="zoomLevel" :top="49" :left="32"></San_shan_tang>
 
     <!-- 鄢家花厅 -->
-    <yan_jia_hua_ting :zoom-level="zoomLevel" :top="58" :left="37"></yan_jia_hua_ting>
+    <Yan_jia_hua_ting :zoom-level="zoomLevel" :top="58" :left="37"></Yan_jia_hua_ting>
 
     <!-- 林聪彝故居 -->
     <Lin_cong_yi_gu_ju :zoom-level="zoomLevel" :top="62" :left="29"></Lin_cong_yi_gu_ju>
@@ -66,49 +66,188 @@
     <Qin_lian_guan :zoom-level="zoomLevel" :top="65" :left="36"></Qin_lian_guan>
 
     <!-- 坊巷讲习所 -->
-    <fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17"></fang_xiang_jiang_xi_suo>
+    <Fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17"></Fang_xiang_jiang_xi_suo>
 
     <!-- 福建华侨主题馆 -->
-    <fu_jian_hua_qiao :zoom-level="zoomLevel" :top="74" :left="21"></fu_jian_hua_qiao>
+    <Fu_jian_hua_qiao :zoom-level="zoomLevel" :top="74" :left="21"></Fu_jian_hua_qiao>
 
     <!-- 聚春园驿馆 -->
-    <ju_chun_yuan_yi_zhan :zoom-level="zoomLevel" :top="71" :left="28"></ju_chun_yuan_yi_zhan>
+    <Ju_chun_yuan_yi_zhan :zoom-level="zoomLevel" :top="71" :left="28"></Ju_chun_yuan_yi_zhan>
 
     <!-- 新四军驻福州办事处旧址 -->
     <Xin_si_jun_zhu_fu_zhou :zoom-level="zoomLevel" :top="73" :left="35"></Xin_si_jun_zhu_fu_zhou>
 
     <!-- 刘齐街故居 -->
-    <liu_qi_jie_gu_ju :zoom-level="zoomLevel" :top="80" :left="25"></liu_qi_jie_gu_ju>
+    <Liu_qi_jie_gu_ju :zoom-level="zoomLevel" :top="80" :left="25"></Liu_qi_jie_gu_ju>
+
+    <!-- 古厝福礼 -->
+    <Gu_cuo_fu_li :zoom-level="zoomLevel" :top="42" :left="44"></Gu_cuo_fu_li>
+
+    <!-- 福小邮的家 -->
+    <Fu_xiao_you :zoom-level="zoomLevel" :top="43" :left="48"></Fu_xiao_you>
+
+    <!-- 南后街展览馆 -->
+    <Nan_hou_jie :zoom-level="zoomLevel" :top="44" :left="52.5"></Nan_hou_jie>
+
+    <!-- 中瑞影城 -->
+    <Zhong_rui_ying_cheng :zoom-level="zoomLevel" :top="51" :left="47"></Zhong_rui_ying_cheng>
+
+    <!-- 安民半舍 -->
+    <An_min_ban_she :zoom-level="zoomLevel" :top="64" :left="42.5"></An_min_ban_she>
+
+    <!-- 唯美客 -->
+    <Wei_mei_ke :zoom-level="zoomLevel" :top="69" :left="50"></Wei_mei_ke>
+
+    <!-- 中共福州市委旧址 -->
+    <Zhong_gong_fu_zhou_shi_wei
+      :zoom-level="zoomLevel"
+      :top="72"
+      :left="42"
+    ></Zhong_gong_fu_zhou_shi_wei>
+
+    <!-- 台湾会馆 -->
+    <Tai_wan_hui_guan :zoom-level="zoomLevel" :top="61.5" :left="54"></Tai_wan_hui_guan>
+
+    <!-- 小黄楼 -->
+    <Xiao_huang_lou :zoom-level="zoomLevel" :top="61" :left="59"></Xiao_huang_lou>
+
+    <!-- 秦隐 安珀 -->
+    <Qin_yin_an_bo :zoom-level="zoomLevel" :top="68" :left="57"></Qin_yin_an_bo>
+
+    <!-- 宜美术馆 -->
+    <Yi_mei_shu_guan :zoom-level="zoomLevel" :top="79" :left="53"></Yi_mei_shu_guan>
+
+    <!-- 郭柏荫故居 -->
+    <Guo_bai_yin_gu_ju :zoom-level="zoomLevel" :top="85" :left="51.5"></Guo_bai_yin_gu_ju>
+
+    <!-- 美喜悦舍 -->
+    <Mei_xi_yue_she :zoom-level="zoomLevel" :top="84" :left="65"></Mei_xi_yue_she>
+
+    <!-- 永和鱼丸 -->
+    <Yong_he_yu_wan :zoom-level="zoomLevel" :top="50" :left="70"></Yong_he_yu_wan>
+
+    <!-- 商印馆 -->
+    <Shang_yin_guan :zoom-level="zoomLevel" :top="19" :left="52"></Shang_yin_guan>
+
+    <!-- 乡约碑 -->
+    <Xiang_yue_bei :zoom-level="zoomLevel" :top="27" :left="49"></Xiang_yue_bei>
+
+    <!-- 福建省非物质文化遗产博览苑 -->
+    <Fei_wu_zhi_wen_hua :zoom-level="zoomLevel" :top="33" :left="52"></Fei_wu_zhi_wen_hua>
+
+    <!-- 欧阳花厅 -->
+    <Ou_yang_hua_ting :zoom-level="zoomLevel" :top="6" :left="70"></Ou_yang_hua_ting>
+
+    <!-- 水榭戏台 -->
+    <Shui_xie_xi_tai :zoom-level="zoomLevel" :top="20" :left="72"></Shui_xie_xi_tai>
+
+    <!-- 同利肉燕 -->
+    <Tong_li_rou_yan :zoom-level="zoomLevel" :top="37" :left="65"></Tong_li_rou_yan>
+
+    <!-- 林觉民冰心故居 -->
+    <Lin_jue_min_bing_xin :zoom-level="zoomLevel" :top="27" :left="94.2"></Lin_jue_min_bing_xin>
+
+    <!-- 风雨廊 -->
+    <Feng_yu_lang :zoom-level="zoomLevel" :top="47" :left="85"></Feng_yu_lang>
+
+    <!-- 星巴克咖啡 -->
+    <Xing_ba_ke_ka_fei :zoom-level="zoomLevel" :top="52" :left="80"></Xing_ba_ke_ka_fei>
+
+    <!-- 王麒故居 -->
+    <Wang_qi_gu_ju :zoom-level="zoomLevel" :top="58" :left="77"></Wang_qi_gu_ju>
+
+    <!-- 福建民俗博物馆 -->
+    <Min_su_bo_wu_guan :zoom-level="zoomLevel" :top="62" :left="80"></Min_su_bo_wu_guan>
+
+    <!-- 畲族馆 -->
+    <She_zu_guan :zoom-level="zoomLevel" :top="60" :left="87"></She_zu_guan>
+
+    <!-- 天后宫 -->
+    <Tian_hou_gong :zoom-level="zoomLevel" :top="71" :left="78"></Tian_hou_gong>
+
+    <!-- 严复故居 -->
+    <Yan_fu_gu_ju :zoom-level="zoomLevel" :top="73" :left="85"></Yan_fu_gu_ju>
+
+    <!-- 绥安会馆 -->
+    <Sui_an_hui_guan :zoom-level="zoomLevel" :top="78" :left="77"></Sui_an_hui_guan>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import lin_ze_xu_ji_nian_guan from '@/components/lin_ze_xu_ji_nian_guan.vue'
+import { onMounted, ref } from 'vue'
+import { ElLoading } from 'element-plus'
+import Lin_ze_xu_ji_nian_guan from '@/components/lin_ze_xu_ji_nian_guan.vue'
 import An_tai_he from '@/components/an_tai_he.vue'
 import Ming_ren_jia_feng_jia_xun from '@/components/ming_ren_jia_feng_jia_xun.vue'
 import Guang_lu_yin_he from '@/components/guang_lu_yin_he.vue'
 import Rui_lai_chun_tang from '@/components/rui_lai_chun_tang.vue'
-import bian_min_zi_xun_dian from '@/components/bian_min_zi_xun_dian.vue'
+import Bian_min_zi_xun_dian from '@/components/bian_min_zi_xun_dian.vue'
 import Zhi_dao_qi_qi from '@/components/zhi_dao_qi_qi.vue'
 import Shou_shan_hui_guan from '@/components/shou_shan_hui_guan.vue'
 import Mo_li_hua_cha from '@/components/mo_li_hua_cha.vue'
 import Hai_shang_si_chou_zhi_lu from '@/components/hai_shang_si_chou_zhi_lu.vue'
 import Min_jian_yi_shu_guan from '@/components/min_jian_yi_shu_guan.vue'
-import yan_fu_han_mo_guan from '@/components/yan_fu_han_mo_guan.vue'
+import Yan_fu_han_mo_guan from '@/components/yan_fu_han_mo_guan.vue'
 import San_shan_tang from '@/components/san_shan_tang.vue'
-import yan_jia_hua_ting from '@/components/yan_jia_hua_ting.vue'
+import Yan_jia_hua_ting from '@/components/yan_jia_hua_ting.vue'
 import Lin_cong_yi_gu_ju from '@/components/lin_cong_yi_gu_ju.vue'
 import Qin_lian_guan from '@/components/qin_lian_guan.vue'
-import fang_xiang_jiang_xi_suo from '@/components/fang_xiang_jiang_xi_suo.vue'
-import fu_jian_hua_qiao from '@/components/fu_jian_hua_qiao.vue'
-import ju_chun_yuan_yi_zhan from '@/components/ju_chun_yuan_yi_zhan.vue'
+import Fang_xiang_jiang_xi_suo from '@/components/fang_xiang_jiang_xi_suo.vue'
+import Fu_jian_hua_qiao from '@/components/fu_jian_hua_qiao.vue'
+import Ju_chun_yuan_yi_zhan from '@/components/ju_chun_yuan_yi_zhan.vue'
 import Xin_si_jun_zhu_fu_zhou from '@/components/xin_si_jun_zhu_fu_zhou.vue'
-import liu_qi_jie_gu_ju from '@/components/liu_qi_jie_gu_ju.vue'
+import Liu_qi_jie_gu_ju from '@/components/liu_qi_jie_gu_ju.vue'
+import Gu_cuo_fu_li from '@/components/gu_cuo_fu_li.vue'
+import Fu_xiao_you from '@/components/fu_xiao_you.vue'
+import Nan_hou_jie from '@/components/nan_hou_jie.vue'
+import Zhong_rui_ying_cheng from '@/components/zhong_rui_ying_cheng.vue'
+import An_min_ban_she from '@/components/an_min_ban_she.vue'
+import Wei_mei_ke from '@/components/wei_mei_ke.vue'
+import Zhong_gong_fu_zhou_shi_wei from '@/components/zhong_gong_fu_zhou_shi_wei.vue'
+import Tai_wan_hui_guan from '@/components/tai_wan_hui_guan.vue'
+import Xiao_huang_lou from '@/components/xiao_huang_lou.vue'
+import Qin_yin_an_bo from '@/components/qin_yin_an_bo.vue'
+import Yi_mei_shu_guan from '@/components/yi_mei_shu_guan.vue'
+import Guo_bai_yin_gu_ju from '@/components/guo_bai_yin_gu_ju.vue'
+import Mei_xi_yue_she from '@/components/mei_xi_yue_she.vue'
+import Yong_he_yu_wan from '@/components/yong_he_yu_wan.vue'
+import Shang_yin_guan from '@/components/shang_yin_guan.vue'
+import Xiang_yue_bei from '@/components/xiang_yue_bei.vue'
+import Fei_wu_zhi_wen_hua from '@/components/fei_wu_zhi_wen_hua.vue'
+import Ou_yang_hua_ting from '@/components/ou_yang_hua_ting.vue'
+import Shui_xie_xi_tai from '@/components/shui_xie_xi_tai.vue'
+import Tong_li_rou_yan from '@/components/tong_li_rou_yan.vue'
+import Lin_jue_min_bing_xin from '@/components/lin_jue_min_bing_xin.vue'
+import Feng_yu_lang from '@/components/feng_yu_lang.vue'
+import Xing_ba_ke_ka_fei from '@/components/xing_ba_ke_ka_fei.vue'
+import Wang_qi_gu_ju from '@/components/wang_qi_gu_ju.vue'
+import Min_su_bo_wu_guan from '@/components/min_su_bo_wu_guan.vue'
+import She_zu_guan from '@/components/she_zu_guan.vue'
+import Tian_hou_gong from '@/components/tian_hou_gong.vue'
+import Yan_fu_gu_ju from '@/components/yan_fu_gu_ju.vue'
+import Sui_an_hui_guan from '@/components/sui_an_hui_guan.vue'
 
 const mapImage = ref<HTMLImageElement | null>(null)
 const zoomLevel = ref<number>(1)
-const zoomStep = 0.2
+const zoomStep = 0.1
+
+let loadingInstance: { close: () => void } | null = null
+
+onMounted(() => {
+  loadingInstance = ElLoading.service({
+    lock: true,
+    text: '加载中...',
+    background: 'rgba(255, 255, 255, 0.7)'
+  })
+})
+
+function onImageLoaded() {
+  if (loadingInstance) {
+    setTimeout(() => {
+      loadingInstance!.close() // 关闭加载蒙版
+    }, 2000)
+  }
+}
 
 function zoomIn() {
   zoomLevel.value += zoomStep
