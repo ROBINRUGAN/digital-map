@@ -92,6 +92,7 @@ p {
 img {
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .text-center {
   border-radius: 10px;
