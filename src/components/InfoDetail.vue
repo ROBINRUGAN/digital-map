@@ -9,16 +9,14 @@
 
     <!-- 文字介绍 -->
     <div class="text-center">
-      <p>
-        {{ description }}
-      </p>
+      <p v-html="formattedDescription"></p>
     </div>
   </el-dialog>
 </template>
 
 <script lang="ts" setup>
 import { ElMessage } from 'element-plus';
-import { ref, defineExpose } from 'vue'
+import { ref, computed } from 'vue'
 
 const dialogTableVisible = ref(false)
 const title = ref('')
@@ -31,6 +29,12 @@ interface SpotInfo {
   description: string
   images: string[]
 }
+
+const formattedDescription = computed(() => {
+      const paragraphs = description.value.split('\n').filter(paragraph => paragraph.trim() !== '');
+      return paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
+    });
+
 
 const loadScenicSpotInfo = async (id: number) => {
     same.value = false
@@ -73,6 +77,9 @@ defineExpose({ loadScenicSpotInfo, same })
 </style>
 
 <style scoped>
+p{
+  text-indent: 2em;
+}
 img {
   width: 100%;
   object-fit: cover;
