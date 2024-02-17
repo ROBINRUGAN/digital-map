@@ -4,6 +4,10 @@
   <button class="zoomOut" @click="zoomOut">➖</button>
   <!-- 帮助 -->
   <button class="aboutUs" @click="zoomOut">❓</button>
+  <!-- Github -->
+  <button class="github" @click="gotoGithub">
+    <i class="bi bi-github"></i>
+  </button>
 
   <InfoDetail :id="exactId" ref="OpenHook" />
 
@@ -23,7 +27,12 @@
     ></Ming_ren_jia_feng_jia_xun>
 
     <!-- 光禄吟合 -->
-    <Guang_lu_yin_he :zoom-level="zoomLevel" :top="23" :left="35" @click="showDetail(5)"></Guang_lu_yin_he>
+    <Guang_lu_yin_he
+      :zoom-level="zoomLevel"
+      :top="23"
+      :left="35"
+      @click="showDetail(5)"
+    ></Guang_lu_yin_he>
 
     <!-- 林则徐纪念馆 -->
     <Lin_ze_xu_ji_nian_guan
@@ -34,19 +43,44 @@
     ></Lin_ze_xu_ji_nian_guan>
 
     <!-- 瑞来春堂 -->
-    <Rui_lai_chun_tang :zoom-level="zoomLevel" :top="27" :left="27" @click="showDetail(6)"></Rui_lai_chun_tang>
+    <Rui_lai_chun_tang
+      :zoom-level="zoomLevel"
+      :top="27"
+      :left="27"
+      @click="showDetail(6)"
+    ></Rui_lai_chun_tang>
 
     <!-- 便民咨询点 -->
-    <Bian_min_zi_xun_dian :zoom-level="zoomLevel" :top="28" :left="31" @click="showDetail(7)"></Bian_min_zi_xun_dian>
+    <Bian_min_zi_xun_dian
+      :zoom-level="zoomLevel"
+      :top="28"
+      :left="31"
+      @click="showDetail(7)"
+    ></Bian_min_zi_xun_dian>
 
     <!-- 至道漆器 -->
-    <Zhi_dao_qi_qi :zoom-level="zoomLevel" :top="31" :left="36" @click="showDetail(8)" ></Zhi_dao_qi_qi>
+    <Zhi_dao_qi_qi
+      :zoom-level="zoomLevel"
+      :top="31"
+      :left="36"
+      @click="showDetail(8)"
+    ></Zhi_dao_qi_qi>
 
     <!-- 寿山会馆 -->
-    <Shou_shan_hui_guan :zoom-level="zoomLevel" :top="34" :left="39" @click="showDetail(9)"></Shou_shan_hui_guan>
+    <Shou_shan_hui_guan
+      :zoom-level="zoomLevel"
+      :top="34"
+      :left="39"
+      @click="showDetail(9)"
+    ></Shou_shan_hui_guan>
 
     <!-- 茉莉花茶文化馆 -->
-    <Mo_li_hua_cha :zoom-level="zoomLevel" :top="35.5" :left="43.5" @click="showDetail(10)"></Mo_li_hua_cha>
+    <Mo_li_hua_cha
+      :zoom-level="zoomLevel"
+      :top="35.5"
+      :left="43.5"
+      @click="showDetail(10)"
+    ></Mo_li_hua_cha>
 
     <!-- 海上丝绸之路展示馆 -->
     <Hai_shang_si_chou_zhi_lu
@@ -57,52 +91,127 @@
     ></Hai_shang_si_chou_zhi_lu>
 
     <!-- 福建海峡民间艺术馆 -->
-    <Min_jian_yi_shu_guan :zoom-level="zoomLevel" :top="37" :left="24" @click="showDetail(12)"></Min_jian_yi_shu_guan>
+    <Min_jian_yi_shu_guan
+      :zoom-level="zoomLevel"
+      :top="37"
+      :left="24"
+      @click="showDetail(12)"
+    ></Min_jian_yi_shu_guan>
 
     <!-- 严复翰墨馆 -->
-    <Yan_fu_han_mo_guan :zoom-level="zoomLevel" :top="47" :left="24" @click="showDetail(13)"></Yan_fu_han_mo_guan>
+    <Yan_fu_han_mo_guan
+      :zoom-level="zoomLevel"
+      :top="47"
+      :left="24"
+      @click="showDetail(13)"
+    ></Yan_fu_han_mo_guan>
 
     <!-- 三山堂旧址 -->
-    <San_shan_tang :zoom-level="zoomLevel" :top="49" :left="32" @click="showDetail(14)"></San_shan_tang>
+    <San_shan_tang
+      :zoom-level="zoomLevel"
+      :top="49"
+      :left="32"
+      @click="showDetail(14)"
+    ></San_shan_tang>
 
     <!-- 鄢家花厅 -->
-    <Yan_jia_hua_ting :zoom-level="zoomLevel" :top="58" :left="37" @click="showDetail(15)"></Yan_jia_hua_ting>
+    <Yan_jia_hua_ting
+      :zoom-level="zoomLevel"
+      :top="58"
+      :left="37"
+      @click="showDetail(15)"
+    ></Yan_jia_hua_ting>
 
     <!-- 林聪彝故居 -->
-    <Lin_cong_yi_gu_ju :zoom-level="zoomLevel" :top="62" :left="29" @click="showDetail(16)"></Lin_cong_yi_gu_ju>
+    <Lin_cong_yi_gu_ju
+      :zoom-level="zoomLevel"
+      :top="62"
+      :left="29"
+      @click="showDetail(16)"
+    ></Lin_cong_yi_gu_ju>
 
     <!-- 勤廉馆 -->
-    <Qin_lian_guan :zoom-level="zoomLevel" :top="65" :left="36" @click="showDetail(17)"></Qin_lian_guan>
+    <Qin_lian_guan
+      :zoom-level="zoomLevel"
+      :top="65"
+      :left="36"
+      @click="showDetail(17)"
+    ></Qin_lian_guan>
 
     <!-- 坊巷讲习所 -->
-    <Fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17" @click="showDetail(2)"></Fang_xiang_jiang_xi_suo>
+    <Fang_xiang_jiang_xi_suo
+      :zoom-level="zoomLevel"
+      :top="65"
+      :left="17"
+      @click="showDetail(2)"
+    ></Fang_xiang_jiang_xi_suo>
 
     <!-- 福建华侨主题馆 -->
-    <Fu_jian_hua_qiao :zoom-level="zoomLevel" :top="74" :left="21" @click="showDetail(18)"></Fu_jian_hua_qiao>
+    <Fu_jian_hua_qiao
+      :zoom-level="zoomLevel"
+      :top="74"
+      :left="21"
+      @click="showDetail(18)"
+    ></Fu_jian_hua_qiao>
 
     <!-- 聚春园驿馆 -->
-    <Ju_chun_yuan_yi_zhan :zoom-level="zoomLevel" :top="71" :left="28" @click="showDetail(19)"></Ju_chun_yuan_yi_zhan>
+    <Ju_chun_yuan_yi_zhan
+      :zoom-level="zoomLevel"
+      :top="71"
+      :left="28"
+      @click="showDetail(19)"
+    ></Ju_chun_yuan_yi_zhan>
 
     <!-- 新四军驻福州办事处旧址 -->
-    <Xin_si_jun_zhu_fu_zhou :zoom-level="zoomLevel" :top="73" :left="35" @click="showDetail(20)"></Xin_si_jun_zhu_fu_zhou>
+    <Xin_si_jun_zhu_fu_zhou
+      :zoom-level="zoomLevel"
+      :top="73"
+      :left="35"
+      @click="showDetail(20)"
+    ></Xin_si_jun_zhu_fu_zhou>
 
     <!-- 刘齐街故居 -->
-    <Liu_qi_jie_gu_ju :zoom-level="zoomLevel" :top="80" :left="25" @click="showDetail(21)"></Liu_qi_jie_gu_ju>
+    <Liu_qi_jie_gu_ju
+      :zoom-level="zoomLevel"
+      :top="80"
+      :left="25"
+      @click="showDetail(21)"
+    ></Liu_qi_jie_gu_ju>
 
     <!-- 古厝福礼 -->
-    <Gu_cuo_fu_li :zoom-level="zoomLevel" :top="42" :left="44" @click="showDetail(22)"></Gu_cuo_fu_li>
+    <Gu_cuo_fu_li
+      :zoom-level="zoomLevel"
+      :top="42"
+      :left="44"
+      @click="showDetail(22)"
+    ></Gu_cuo_fu_li>
 
     <!-- 福小邮的家 -->
     <Fu_xiao_you :zoom-level="zoomLevel" :top="43" :left="48" @click="showDetail(23)"></Fu_xiao_you>
 
     <!-- 南后街展览馆 -->
-    <Nan_hou_jie :zoom-level="zoomLevel" :top="44" :left="52.5" @click="showDetail(24)"></Nan_hou_jie>
+    <Nan_hou_jie
+      :zoom-level="zoomLevel"
+      :top="44"
+      :left="52.5"
+      @click="showDetail(24)"
+    ></Nan_hou_jie>
 
     <!-- 中瑞影城 -->
-    <Zhong_rui_ying_cheng :zoom-level="zoomLevel" :top="51" :left="47" @click="showDetail(25)"></Zhong_rui_ying_cheng>
+    <Zhong_rui_ying_cheng
+      :zoom-level="zoomLevel"
+      :top="51"
+      :left="47"
+      @click="showDetail(25)"
+    ></Zhong_rui_ying_cheng>
 
     <!-- 安民半舍 -->
-    <An_min_ban_she :zoom-level="zoomLevel" :top="64" :left="42.5" @click="showDetail(26)"></An_min_ban_she>
+    <An_min_ban_she
+      :zoom-level="zoomLevel"
+      :top="64"
+      :left="42.5"
+      @click="showDetail(26)"
+    ></An_min_ban_she>
 
     <!-- 唯美客 -->
     <Wei_mei_ke :zoom-level="zoomLevel" :top="69" :left="50" @click="showDetail(27)"></Wei_mei_ke>
@@ -116,70 +225,175 @@
     ></Zhong_gong_fu_zhou_shi_wei>
 
     <!-- 台湾会馆 -->
-    <Tai_wan_hui_guan :zoom-level="zoomLevel" :top="61.5" :left="54" @click="showDetail(29)"></Tai_wan_hui_guan>
+    <Tai_wan_hui_guan
+      :zoom-level="zoomLevel"
+      :top="61.5"
+      :left="54"
+      @click="showDetail(29)"
+    ></Tai_wan_hui_guan>
 
     <!-- 小黄楼 -->
-    <Xiao_huang_lou :zoom-level="zoomLevel" :top="61" :left="59" @click="showDetail(30)"></Xiao_huang_lou>
+    <Xiao_huang_lou
+      :zoom-level="zoomLevel"
+      :top="61"
+      :left="59"
+      @click="showDetail(30)"
+    ></Xiao_huang_lou>
 
     <!-- 秦隐 安珀 -->
-    <Qin_yin_an_bo :zoom-level="zoomLevel" :top="68" :left="57" @click="showDetail(31)"></Qin_yin_an_bo>
+    <Qin_yin_an_bo
+      :zoom-level="zoomLevel"
+      :top="68"
+      :left="57"
+      @click="showDetail(31)"
+    ></Qin_yin_an_bo>
 
     <!-- 宜美术馆 -->
-    <Yi_mei_shu_guan :zoom-level="zoomLevel" :top="79" :left="53" @click="showDetail(32)"></Yi_mei_shu_guan>
+    <Yi_mei_shu_guan
+      :zoom-level="zoomLevel"
+      :top="79"
+      :left="53"
+      @click="showDetail(32)"
+    ></Yi_mei_shu_guan>
 
     <!-- 郭柏荫故居 -->
-    <Guo_bai_yin_gu_ju :zoom-level="zoomLevel" :top="85" :left="51.5" @click="showDetail(33)"></Guo_bai_yin_gu_ju>
+    <Guo_bai_yin_gu_ju
+      :zoom-level="zoomLevel"
+      :top="85"
+      :left="51.5"
+      @click="showDetail(33)"
+    ></Guo_bai_yin_gu_ju>
 
     <!-- 美喜悦舍 -->
-    <Mei_xi_yue_she :zoom-level="zoomLevel" :top="84" :left="65" @click="showDetail(34)"></Mei_xi_yue_she>
+    <Mei_xi_yue_she
+      :zoom-level="zoomLevel"
+      :top="84"
+      :left="65"
+      @click="showDetail(34)"
+    ></Mei_xi_yue_she>
 
     <!-- 永和鱼丸 -->
-    <Yong_he_yu_wan :zoom-level="zoomLevel" :top="50" :left="70" @click="showDetail(35)"></Yong_he_yu_wan>
+    <Yong_he_yu_wan
+      :zoom-level="zoomLevel"
+      :top="50"
+      :left="70"
+      @click="showDetail(35)"
+    ></Yong_he_yu_wan>
 
     <!-- 商印馆 -->
-    <Shang_yin_guan :zoom-level="zoomLevel" :top="19" :left="52" @click="showDetail(36)"></Shang_yin_guan>
+    <Shang_yin_guan
+      :zoom-level="zoomLevel"
+      :top="19"
+      :left="52"
+      @click="showDetail(36)"
+    ></Shang_yin_guan>
 
     <!-- 乡约碑 -->
-    <Xiang_yue_bei :zoom-level="zoomLevel" :top="27" :left="49" @click="showDetail(37)"></Xiang_yue_bei>
+    <Xiang_yue_bei
+      :zoom-level="zoomLevel"
+      :top="27"
+      :left="49"
+      @click="showDetail(37)"
+    ></Xiang_yue_bei>
 
     <!-- 福建省非物质文化遗产博览苑 -->
-    <Fei_wu_zhi_wen_hua :zoom-level="zoomLevel" :top="33" :left="52" @click="showDetail(38)"></Fei_wu_zhi_wen_hua>
+    <Fei_wu_zhi_wen_hua
+      :zoom-level="zoomLevel"
+      :top="33"
+      :left="52"
+      @click="showDetail(38)"
+    ></Fei_wu_zhi_wen_hua>
 
     <!-- 欧阳花厅 -->
-    <Ou_yang_hua_ting :zoom-level="zoomLevel" :top="6" :left="70" @click="showDetail(39)"></Ou_yang_hua_ting>
+    <Ou_yang_hua_ting
+      :zoom-level="zoomLevel"
+      :top="6"
+      :left="70"
+      @click="showDetail(39)"
+    ></Ou_yang_hua_ting>
 
     <!-- 水榭戏台 -->
-    <Shui_xie_xi_tai :zoom-level="zoomLevel" :top="20" :left="72" @click="showDetail(40)"></Shui_xie_xi_tai>
+    <Shui_xie_xi_tai
+      :zoom-level="zoomLevel"
+      :top="20"
+      :left="72"
+      @click="showDetail(40)"
+    ></Shui_xie_xi_tai>
 
     <!-- 同利肉燕 -->
-    <Tong_li_rou_yan :zoom-level="zoomLevel" :top="37" :left="65" @click="showDetail(41)"></Tong_li_rou_yan>
+    <Tong_li_rou_yan
+      :zoom-level="zoomLevel"
+      :top="37"
+      :left="65"
+      @click="showDetail(41)"
+    ></Tong_li_rou_yan>
 
     <!-- 林觉民冰心故居 -->
-    <Lin_jue_min_bing_xin :zoom-level="zoomLevel" :top="27" :left="94.2" @click="showDetail(42)"></Lin_jue_min_bing_xin>
+    <Lin_jue_min_bing_xin
+      :zoom-level="zoomLevel"
+      :top="27"
+      :left="94.2"
+      @click="showDetail(42)"
+    ></Lin_jue_min_bing_xin>
 
     <!-- 风雨廊 -->
-    <Feng_yu_lang :zoom-level="zoomLevel" :top="47" :left="85" @click="showDetail(43)"></Feng_yu_lang>
+    <Feng_yu_lang
+      :zoom-level="zoomLevel"
+      :top="47"
+      :left="85"
+      @click="showDetail(43)"
+    ></Feng_yu_lang>
 
     <!-- 星巴克咖啡 -->
-    <Xing_ba_ke_ka_fei :zoom-level="zoomLevel" :top="52" :left="80" @click="showDetail(44)"></Xing_ba_ke_ka_fei>
+    <Xing_ba_ke_ka_fei
+      :zoom-level="zoomLevel"
+      :top="52"
+      :left="80"
+      @click="showDetail(44)"
+    ></Xing_ba_ke_ka_fei>
 
     <!-- 王麒故居 -->
-    <Wang_qi_gu_ju :zoom-level="zoomLevel" :top="58" :left="77" @click="showDetail(45)"></Wang_qi_gu_ju>
+    <Wang_qi_gu_ju
+      :zoom-level="zoomLevel"
+      :top="58"
+      :left="77"
+      @click="showDetail(45)"
+    ></Wang_qi_gu_ju>
 
     <!-- 福建民俗博物馆 -->
-    <Min_su_bo_wu_guan :zoom-level="zoomLevel" :top="62" :left="80" @click="showDetail(46)"></Min_su_bo_wu_guan>
+    <Min_su_bo_wu_guan
+      :zoom-level="zoomLevel"
+      :top="62"
+      :left="80"
+      @click="showDetail(46)"
+    ></Min_su_bo_wu_guan>
 
     <!-- 畲族馆 -->
     <She_zu_guan :zoom-level="zoomLevel" :top="60" :left="87" @click="showDetail(47)"></She_zu_guan>
 
     <!-- 天后宫 -->
-    <Tian_hou_gong :zoom-level="zoomLevel" :top="71" :left="78" @click="showDetail(48)"></Tian_hou_gong>
+    <Tian_hou_gong
+      :zoom-level="zoomLevel"
+      :top="71"
+      :left="78"
+      @click="showDetail(48)"
+    ></Tian_hou_gong>
 
     <!-- 严复故居 -->
-    <Yan_fu_gu_ju :zoom-level="zoomLevel" :top="73" :left="85" @click="showDetail(49)"></Yan_fu_gu_ju>
+    <Yan_fu_gu_ju
+      :zoom-level="zoomLevel"
+      :top="73"
+      :left="85"
+      @click="showDetail(49)"
+    ></Yan_fu_gu_ju>
 
     <!-- 绥安会馆 -->
-    <Sui_an_hui_guan :zoom-level="zoomLevel" :top="78" :left="77" @click="showDetail(50)"></Sui_an_hui_guan>
+    <Sui_an_hui_guan
+      :zoom-level="zoomLevel"
+      :top="78"
+      :left="77"
+      @click="showDetail(50)"
+    ></Sui_an_hui_guan>
   </div>
 </template>
 
@@ -245,6 +459,12 @@ const zoomStep = 0.1
 const OpenHook = ref<typeof InfoDetail | null>(null)
 let loadingInstance: { close: () => void } | null = null
 
+// 跳转到仓库地址https://github.com/ROBINRUGAN/digital-map
+const gotoGithub = () => {
+  window.location.href = 'https://github.com/ROBINRUGAN/digital-map';
+}
+
+
 onMounted(() => {
   loadingInstance = ElLoading.service({
     lock: true,
@@ -299,7 +519,8 @@ function applyZoom() {
 
 .zoomIn,
 .zoomOut,
-.aboutUs {
+.aboutUs,
+.github {
   cursor: pointer;
   margin-left: 5px;
   border-radius: 25%;
@@ -323,10 +544,14 @@ function applyZoom() {
 .aboutUs {
   top: 130px;
 }
+.github {
+  top: 190px;
+}
 
 .zoomIn:hover,
 .zoomOut:hover,
-.aboutUs:hover {
+.aboutUs:hover,
+ .github:hover {
   background-color: rgb(255, 255, 255, 1);
 }
 </style>
