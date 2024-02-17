@@ -73,7 +73,7 @@
     <Qin_lian_guan :zoom-level="zoomLevel" :top="65" :left="36"></Qin_lian_guan>
 
     <!-- 坊巷讲习所 -->
-    <Fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17"></Fang_xiang_jiang_xi_suo>
+    <Fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17" @click="showDetail(2)"></Fang_xiang_jiang_xi_suo>
 
     <!-- 福建华侨主题馆 -->
     <Fu_jian_hua_qiao :zoom-level="zoomLevel" :top="74" :left="21"></Fu_jian_hua_qiao>
