@@ -1,9 +1,12 @@
 <template>
-  <el-dialog v-model="dialogTableVisible" class="dialog" :title="title" width="1000">
+  <el-dialog v-model="dialogTableVisible" class="dialog" :title="title" width="1000" :close-on-press-escape="false">
+    <!-- 图片查看器 -->
+    <el-image-viewer v-if="showViewer" :onClose="closeViewer" :url-list="images" />
+
     <!-- 轮播图展示图片 -->
     <el-carousel height="190px">
       <el-carousel-item v-for="(image, index) in images" :key="index">
-        <img :src="image" />
+        <img :src="image" @click="onPreview" />
       </el-carousel-item>
     </el-carousel>
 
@@ -15,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ElMessage } from 'element-plus';
+import { ElMessage } from 'element-plus'
 import { ref, computed } from 'vue'
 
 const dialogTableVisible = ref(false)
@@ -23,33 +26,39 @@ const title = ref('')
 const description = ref('')
 const images = ref([])
 const same = ref(true)
+const showViewer = ref(false)
 interface SpotInfo {
   id: number
   title: string
   description: string
   images: string[]
 }
+const onPreview = () => {
+  showViewer.value = true
+}
 
+const closeViewer = () => {
+  showViewer.value = false
+}
 const formattedDescription = computed(() => {
-      const paragraphs = description.value.split('\n').filter(paragraph => paragraph.trim() !== '');
-      return paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('');
-    });
-
+  const paragraphs = description.value.split('\n').filter((paragraph) => paragraph.trim() !== '')
+  return paragraphs.map((paragraph) => `<p>${paragraph}</p>`).join('')
+})
 
 const loadScenicSpotInfo = async (id: number) => {
-    same.value = false
-    const response = await fetch('./data/spots.json') // 确保路径正确
-    const { spots } = await response.json()
-    const spot = spots.find((s: SpotInfo) => s.id === id)
-    if (spot) {
-      title.value = spot.title
-      description.value = spot.description
-      images.value = spot.images
-      dialogTableVisible.value = true
-    } else {
-      dialogTableVisible.value = false
-      ElMessage.error('该景点信息待完善')
-    }
+  same.value = false
+  const response = await fetch('./data/spots.json') // 确保路径正确
+  const { spots } = await response.json()
+  const spot = spots.find((s: SpotInfo) => s.id === id)
+  if (spot) {
+    title.value = spot.title
+    description.value = spot.description
+    images.value = spot.images
+    dialogTableVisible.value = true
+  } else {
+    dialogTableVisible.value = false
+    ElMessage.error('该景点信息待完善')
+  }
 }
 
 defineExpose({ loadScenicSpotInfo, same })
@@ -77,7 +86,7 @@ defineExpose({ loadScenicSpotInfo, same })
 </style>
 
 <style scoped>
-p{
+p {
   text-indent: 2em;
 }
 img {
