@@ -4,6 +4,10 @@
   <button class="zoomOut" @click="zoomOut">➖</button>
   <!-- 帮助 -->
   <button class="aboutUs" @click="zoomOut">❓</button>
+  <!-- Github -->
+  <button class="github" @click="gotoGithub">
+    <i class="bi bi-github"></i>
+  </button>
 
   <InfoDetail :id="exactId" ref="OpenHook" />
 
@@ -75,7 +79,12 @@
     <Qin_lian_guan :zoom-level="zoomLevel" :top="65" :left="36" @click="showDetail(17)"></Qin_lian_guan>
 
     <!-- 坊巷讲习所 -->
-    <Fang_xiang_jiang_xi_suo :zoom-level="zoomLevel" :top="65" :left="17" @click="showDetail(2)"></Fang_xiang_jiang_xi_suo>
+    <Fang_xiang_jiang_xi_suo
+      :zoom-level="zoomLevel"
+      :top="65"
+      :left="17"
+      @click="showDetail(2)"
+    ></Fang_xiang_jiang_xi_suo>
 
     <!-- 福建华侨主题馆 -->
     <Fu_jian_hua_qiao :zoom-level="zoomLevel" :top="74" :left="21" @click="showDetail(18)"></Fu_jian_hua_qiao>
@@ -245,6 +254,12 @@ const zoomStep = 0.1
 const OpenHook = ref<typeof InfoDetail | null>(null)
 let loadingInstance: { close: () => void } | null = null
 
+// 跳转到仓库地址https://github.com/ROBINRUGAN/digital-map
+const gotoGithub = () => {
+  window.location.href = 'https://github.com/ROBINRUGAN/digital-map';
+}
+
+
 onMounted(() => {
   loadingInstance = ElLoading.service({
     lock: true,
@@ -299,7 +314,8 @@ function applyZoom() {
 
 .zoomIn,
 .zoomOut,
-.aboutUs {
+.aboutUs,
+.github {
   cursor: pointer;
   margin-left: 5px;
   border-radius: 25%;
@@ -323,10 +339,14 @@ function applyZoom() {
 .aboutUs {
   top: 130px;
 }
+.github {
+  top: 190px;
+}
 
 .zoomIn:hover,
 .zoomOut:hover,
-.aboutUs:hover {
+.aboutUs:hover,
+ .github:hover {
   background-color: rgb(255, 255, 255, 1);
 }
 </style>
