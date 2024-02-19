@@ -1,52 +1,65 @@
-# digital-map
+<div align="center">
+  <img src="./public/logo.png" alt="项目Logo" width="200"/>
+  
+  # 古厝新数，行迹福州
+  
+  **福州大学计算机与大数据学院2024寒假社会实践“古厝新数，行迹福州”数字地图项目**
+  
+  以三坊七巷为例，通过数字化技术记录古厝的前世今生与历史变迁，提供一个交互式的在线平台，让用户能够通过数字地图探索三坊七巷的每一处古建筑，了解其独特的建筑风格、历史故事和文化价值。
+  
+  ![分隔线](https://via.placeholder.com/1000x1.png?text=+)
+</div>
 
-This template should help get you started developing with Vue 3 in Vite.
+## 🌟 特色
 
-## Recommended IDE Setup
+- **互动地图**：详细的互动式地图展示三坊七巷的古建筑布局。
+- **丰富内容**：每个建筑配有详细的图片展示、历史背景、文化意义和现状介绍。
+- **教育资源**：为学校和研究机构提供丰富的教育和研究资源。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## 🛠 技术栈
 
-## Type Support for `.vue` Imports in TS
+![Vue3](https://img.shields.io/badge/-Vue3-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)
+![Element Plus](https://img.shields.io/badge/-Element%20Plus-409EFF?style=for-the-badge&logo=element&logoColor=white)
+![Vite](https://img.shields.io/badge/-Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Sass](https://img.shields.io/badge/-Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
+![Pinia](https://img.shields.io/badge/-Pinia-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![Yarn](https://img.shields.io/badge/-Yarn-2188B6?style=for-the-badge&logo=yarn&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## 📸 项目展示
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+<div align="center">
+  <img src="./public/1.png" alt="屏幕截图1" width="100%"/>
+  <img src="./public/2.png" alt="屏幕截图2" width="100%"/>
+  <img src="./public/3.png" alt="屏幕截图3" width="100%"/>
+  <img src="./public/4.png" alt="屏幕截图4" width="100%"/>
+</div>
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## 🔧 安装
+本项目已托管部署到GitHub Page，并采用西二在线工作室二级域名和CDN加速。如果你想在本地运行，那么请在终端运行如下代码：
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+git clone https://github.com/ROBINRUGAN/digital-map.git
+cd digital-map
+yarn install
+```
+## 🚀 使用
+在终端输入如下命令即可启动：
+```
+yarn serve
 ```
 
-### Compile and Hot-Reload for Development
+## 📄 许可证
 
-```sh
-npm run dev
-```
+本项目采用 [MIT 许可证](LICENSE)。
 
-### Type-Check, Compile and Minify for Production
+<div align="center">
+  
+![分隔线](https://via.placeholder.com/1000x1.png?text=+)
 
-```sh
-npm run build
-```
+💼 本项目域名和CDN加速由福州大学西二在线工作室支持
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+<img src="./public/west2.png" alt="项目Logo" width="150"/>
 
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+</div>
