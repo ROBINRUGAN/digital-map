@@ -32,13 +32,13 @@ const pointStyle = computed(() => {
 
 <style scoped>
 .map-point {
-  width: 95px;
-  height: 45px;
+  width: 85px;
+  height: 40px;
   background-size: 100%;
   cursor: pointer;
   background-color: transparent;
   border: none;
-  background-image: url('@/assets/bian_min_zi_xun_dian.png');
+  background-image: url('@/assets/mei_shu_guan.png');
   position: absolute;
   transition: all 0.3s ease;
   z-index: 4;

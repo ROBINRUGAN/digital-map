@@ -2,12 +2,26 @@
   <!-- 缩放按钮 -->
   <button class="zoomIn" @click="zoomIn">➕</button>
   <button class="zoomOut" @click="zoomOut">➖</button>
-  <!-- 帮助 -->
-  <button class="aboutUs" @click="zoomOut">❓</button>
+
   <!-- Github -->
   <button class="github" @click="gotoGithub">
     <i class="bi bi-github"></i>
   </button>
+
+  <!-- 帮助 -->
+  <el-popover placement="right" :width="445" trigger="hover">
+  <template #reference>
+    <button class="aboutUs" @click="zoomOut">❓</button>
+  </template>
+  <div class="aboutInfo">
+    <h3>关于我们</h3>
+    <p>这是福州大学计算机与大数据学院2024寒假三下乡“古厝新数，行迹福州”数字地图，基于Vue3+TypeScript开发。详情可点击上方按钮进入GitHub仓库页查看。</p>
+    <p>技术组成员：吴荣榜，梅明胜</p>
+    <br>
+    <p>点击地图上的标记点📌，可以查看相关景点的图片和文字介绍📝，再次点击图片可查看高清大图🏞️。</p>
+    <p>点击左侧的放大按钮➕和缩小按钮➖，可以放大或缩小地图。</p>
+  </div>
+  </el-popover>
 
   <InfoDetail :id="exactId" ref="OpenHook" />
 
@@ -40,8 +54,8 @@
     <!-- 瑞来春堂 -->
     <Rui_lai_chun_tang :zoom-level="zoomLevel" :top="27" :left="27" @click="showDetail(6)"></Rui_lai_chun_tang>
 
-    <!-- 便民咨询点 -->
-    <Bian_min_zi_xun_dian :zoom-level="zoomLevel" :top="28" :left="31" @click="showDetail(7)"></Bian_min_zi_xun_dian>
+    <!-- 美术馆 -->
+    <Mei_shu_guan :zoom-level="zoomLevel" :top="28" :left="31" @click="showDetail(7)"></Mei_shu_guan>
 
     <!-- 至道漆器 -->
     <Zhi_dao_qi_qi :zoom-level="zoomLevel" :top="31" :left="36" @click="showDetail(8)" ></Zhi_dao_qi_qi>
@@ -200,7 +214,7 @@ import An_tai_he from '@/components/location/an_tai_he.vue'
 import Ming_ren_jia_feng_jia_xun from '@/components/location/ming_ren_jia_feng_jia_xun.vue'
 import Guang_lu_yin_he from '@/components/location/guang_lu_yin_he.vue'
 import Rui_lai_chun_tang from '@/components/location/rui_lai_chun_tang.vue'
-import Bian_min_zi_xun_dian from '@/components/location/bian_min_zi_xun_dian.vue'
+import Mei_shu_guan from '@/components/location/mei_shu_guan.vue'
 import Zhi_dao_qi_qi from '@/components/location/zhi_dao_qi_qi.vue'
 import Shou_shan_hui_guan from '@/components/location/shou_shan_hui_guan.vue'
 import Mo_li_hua_cha from '@/components/location/mo_li_hua_cha.vue'
@@ -298,7 +312,39 @@ function applyZoom() {
 }
 </script>
 
+<style>
+.el-popper{
+  padding: 0 !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 1) !important;
+  border-radius: 20px !important;
+}
+.el-popper.is-light .el-popper__arrow::before {
+    background: #c9c5c5d8 !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1) !important;
+    border-color: transparent !important;
+}
+</style>
 <style scoped>
+
+.aboutInfo {
+  background-color: #c9c5c5d8;
+  padding: 18px;
+  font-size: 20px;
+  border-radius: 20px;
+  color: rgb(53, 52, 52);
+  line-height: 25px;
+}
+h3{
+  font-size: 24px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: rgb(171, 27, 27);
+  text-indent: 0;
+}
+
 .map-container {
   overflow: scroll;
   height: 100vh;
@@ -337,10 +383,10 @@ function applyZoom() {
 }
 
 .aboutUs {
-  top: 130px;
+  top: 190px;
 }
 .github {
-  top: 190px;
+  top: 130px;
 }
 
 .zoomIn:hover,
