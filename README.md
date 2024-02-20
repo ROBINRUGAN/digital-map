@@ -10,7 +10,7 @@
   ![分隔线](https://via.placeholder.com/1000x1.png?text=+)
 </div>
 
-## 🌟 特色
+## 🌟 项目特色
 
 - **互动地图**：详细的互动式地图展示三坊七巷的古建筑布局。
 - **丰富内容**：每个建筑配有详细的图片展示、历史背景、文化意义和现状介绍。
@@ -26,6 +26,11 @@
 ![Pinia](https://img.shields.io/badge/-Pinia-42B883?style=for-the-badge&logo=vuedotjs&logoColor=white)
 ![Yarn](https://img.shields.io/badge/-Yarn-2188B6?style=for-the-badge&logo=yarn&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
+- 采用GitHub Page托管及自动化部署，并采用定制域名和CDN加速。
+- ScrollBar样式优化，采用MacOS风格。
+- 采用ElementPlus隐藏组件el-image-viewer，实现定制化查看大图功能。
+- 缩放、拖拽地图后地标不错位，交互丝滑直观。
+- 采用响应式设计，适配各PC和Laptop。
 
 ## 📸 项目展示
 
