@@ -6,8 +6,10 @@
   **福州大学计算机与大数据学院2024寒假社会实践“古厝新数，行迹福州”数字地图项目**
   
   以三坊七巷为例，通过数字化技术记录古厝的前世今生与历史变迁，提供一个交互式的在线平台，让用户能够通过数字地图探索三坊七巷的每一处古建筑，了解其独特的建筑风格、历史故事和文化价值。
-  
+  <img src="./public/macbook.png" alt="项目Logo" width="100%"/>
+  <img src="./public/ipad.png" alt="项目Logo" width="100%"/>
   ![分隔线](https://via.placeholder.com/1000x1.png?text=+)
+
 </div>
 
 ## 🌟 项目特色
