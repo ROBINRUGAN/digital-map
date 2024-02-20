@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="./public/logo.png" alt="项目Logo" width="200" style="margin-right: 40px;"/> <!-- 增加了右边距 -->
+  <img src="./public/logo.png" alt="项目Logo" width="200"/> <!-- 增加了右边距 -->
+  &nbsp; &nbsp; &nbsp;
   <img src="./public/logo1.png" alt="项目Logo" width="200"/>
   
   # 数字照亮文脉之光，技术护航古厝保护
