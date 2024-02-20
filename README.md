@@ -1,7 +1,8 @@
 <div align="center">
-  <img src="./public/logo.png" alt="项目Logo" width="200"/>
+  <img src="./public/logo.png" alt="项目Logo" width="200" style="margin-right: 40px;"/> <!-- 增加了右边距 -->
+  <img src="./public/logo1.png" alt="项目Logo" width="200"/>
   
-  # 古厝新数，行迹福州
+  # 数字照亮文脉之光，技术护航古厝保护
   
   **福州大学计算机与大数据学院2024寒假社会实践“古厝新数，行迹福州”数字地图项目**
   
