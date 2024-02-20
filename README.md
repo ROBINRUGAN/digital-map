@@ -31,9 +31,11 @@
 ![Yarn](https://img.shields.io/badge/-Yarn-2188B6?style=for-the-badge&logo=yarn&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/-GitHub%20Pages-222222?style=for-the-badge&logo=github&logoColor=white)
 - 采用GitHub Page托管及自动化部署，并采用定制域名和CDN加速。
-- ScrollBar样式优化，采用MacOS风格。
+- 重构ScrollBar样式，采用MacOS风格，简洁美观。
+- 组件封装合理，接收相关Prop和暴露相关func。
+- 将景点信息封装成json文件，可维护性强。
 - 采用ElementPlus隐藏组件el-image-viewer，实现定制化查看大图功能。
-- 缩放、拖拽地图后地标不错位，交互丝滑直观。
+- 缩放、拖拽地图后地标无错位问题，交互丝滑直观。
 - 采用响应式设计，适配各PC和Laptop。
 
 ## 📸 项目展示
